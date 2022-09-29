@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
 // 
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Home from './pages/Home';
+import Users from './pages/Users';
+import Books from './pages/Books';
+
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />
+  },
+  {
+    path: '/users',
+    element: <Users />
+  },
+  {
+    path: '/books',
+    element: <Books />
+  }
+])
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h3>This React CI-CD done by shahul with github actions</h3>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello welcome to React ci cd
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <RouterProvider router={router} />
     </div>
   );
 }
