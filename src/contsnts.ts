@@ -1,5 +1,4 @@
 
 
-
-export const baseUrl = import.meta.env.NODE_ENV === 'production' ?
+export const baseUrl = import.meta.env.PROD ?
     'https://api.democom.online' : 'http://localhost:3500'
